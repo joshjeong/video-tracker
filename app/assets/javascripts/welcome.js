@@ -2,8 +2,8 @@ $(document).ready(function(){
     var movie = new Movie();
     
     
-    var movieView = new MovieView({model:movie})
-    movieView.render();
+    // var movieView = new MovieView({model:movie})
+    // movieView.render();
 
 
     var movies = new Movies();
