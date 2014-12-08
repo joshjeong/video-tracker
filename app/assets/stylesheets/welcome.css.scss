@@ -6,18 +6,29 @@
   .movies_list{
     li{
       position: relative;
-      padding: 0.5em;
+      padding: 2.5em;
       font-size: 25px;
-      color: red;
+      color: #0084B4;
       border-bottom: 1px solid #343434;
+      list-style: none;
+      text-align: center;
       &.watched{
-        color: green;
+        color: #c0deed;
+        text-decoration: line-through;
       }
-      img{
-        height: 30px;
+      h4{
+        cursor: pointer;
+      }
+      .thumbnail{
+        top: 0;
         float: right;
         position: absolute;
-        right: 10px;
+        right: 30px;
+      }
+      img{
+        width: 100px;
+        height: 152px;
+        size: contain;
       }
     }
   }
