@@ -5,7 +5,11 @@ task :import => :environment do
 
   in_theatres.each do |movie|
     title = movie.title
-    image = "http://image.tmdb.org/t/p/w780/#{movie.poster_path}"
+    if movie.poster_path
+      image = "http://image.tmdb.org/t/p/w780/#{movie.poster_path}"
+    else
+      image = "http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_14.jpg"
+    end
     release_date = movie.release_date
     link = "http://www.themoviedb.org/movie/#{movie.id}"
     Movie.create(title: title, image: image, release_date: release_date, link: link, watched: false)
