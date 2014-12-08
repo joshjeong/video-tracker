@@ -18,6 +18,6 @@ var MovieView = Backbone.View.extend({
         }
     },
     render: function(){
-        return this.$el.text(this.model.get('title'));
+        return this.$el.html('<h4>'+this.model.get('title')+'</h4>'+'<div class= "thumbnail"><img src='+this.model.get('image')+'></div>');
     },
 })
