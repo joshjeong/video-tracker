@@ -1,3 +1,38 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#app {
+  .title{
+    text-align: center;
+  }
+  .movies_list{
+    li{
+      position: relative;
+      padding: 2.5em;
+      font-size: 25px;
+      color: #0084B4;
+      border-bottom: 1px solid #343434;
+      list-style: none;
+      text-align: center;
+      &.watched{
+        color: #c0deed;
+        text-decoration: line-through;
+      }
+      h4{
+        cursor: pointer;
+      }
+      .thumbnail{
+        top: 0;
+        float: right;
+        position: absolute;
+        right: 30px;
+      }
+      img{
+        width: 100px;
+        height: 152px;
+        size: contain;
+      }
+    }
+  }
+}

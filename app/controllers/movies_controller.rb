@@ -13,8 +13,9 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    if [true, false, "true", "false"].include?(params[:watched])
+    if [true, false].include?(params[:watched])
       @movie.update_attributes(watched: params[:watched])
+      respond_with @movie
     else
       render nothing: true, status: 304 
     end
