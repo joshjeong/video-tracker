@@ -1,6 +1,10 @@
 var MovieView = Backbone.View.extend({
+    initialize: function(){
+        if(this.model.get('watched')==true){
+            this.$el.addClass('watched')
+        }
+    },
     tagName: 'li',
-    template: _.template('<%= title %>'),
     events: {
         'click' : 'toggleWatched'
     },
@@ -14,7 +18,6 @@ var MovieView = Backbone.View.extend({
         }
     },
     render: function(){
-        return this.$el.html(template({title: this.model.get('title')}))
-        // return this.$el.text(this.model.get('title'));
+        return this.$el.text(this.model.get('title'));
     },
 })
