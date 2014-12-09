@@ -6,7 +6,8 @@
   .title{
     text-align: center;
   }
-  .movies_list{
+  .movies-list,
+  .shows-list{
     li{
       position: relative;
       padding: 2.5em;
@@ -35,4 +36,8 @@
       }
     }
   }
+}
+
+.no-display{
+  display: none;
 }

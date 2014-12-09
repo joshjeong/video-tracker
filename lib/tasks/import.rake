@@ -13,7 +13,9 @@ namespace :import do
       end
       release_date = movie.release_date
       link = "http://www.themoviedb.org/movie/#{movie.id}"
-      Movie.create(title: title, image: image, release_date: release_date, link: link, watched: false)
+      rating = movie.vote_average
+      overview = Tmdb::Movie.detail(movie.id).overview
+      Movie.create(title: title, image: image, release_date: release_date, link: link, watched: false, overview: overview, rating: rating)
     end
   end
 
