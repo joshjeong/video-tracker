@@ -16,10 +16,14 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
-//= require video_tracker
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree .
+//= require backbone/video_tracker
+//= require backbone/application
+//= require_tree ./backbone/models
+//= require_tree ./backbone/collections
+//= require_tree ./backbone/views
+//= require_tree ./backbone/routers
+
+
+
+
+
