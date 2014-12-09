@@ -18,10 +18,13 @@
 //= require backbone
 //= require backbone/video_tracker
 //= require backbone/application
+//= require backbone/namespace
 //= require_tree ./backbone/models
 //= require_tree ./backbone/collections
 //= require_tree ./backbone/views
+//= require_tree ./backbone/controllers
 //= require_tree ./backbone/routers
+
 
 
 
