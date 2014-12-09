@@ -1,5 +1,4 @@
 var MovieListView = Backbone.View.extend({
-
     initialize: function(){
         // Will listen for newly added movies and will call
         // addOne function to render
@@ -9,7 +8,7 @@ var MovieListView = Backbone.View.extend({
     addOne: function(movie){
         // each model with its own view
         var movieView = new MovieView({model: movie});
-        $('.movies_list').append(movieView.render())
+        $('.movies-list').append(movieView.render())
     },
     addAll: function(){
         // Will call addOne and pass 'this' for correct context
@@ -18,5 +17,4 @@ var MovieListView = Backbone.View.extend({
     render: function(){
         this.addAll();
     }
-
 });

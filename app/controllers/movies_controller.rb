@@ -20,5 +20,4 @@ class MoviesController < ApplicationController
       render nothing: true, status: 304 
     end
   end
-
 end
