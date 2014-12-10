@@ -5,6 +5,7 @@ var MovieView = Backbone.View.extend({
         }
     },
     tagName: 'li',
+    className: 'row',
     events: {
         'click' : 'toggleWatched'
     },
@@ -18,6 +19,6 @@ var MovieView = Backbone.View.extend({
         }
     },
     render: function(){
-        return this.$el.html('<h4>'+this.model.get('title')+'</h4>'+'<div class= "thumbnail"><img src='+this.model.get('image')+'></div>');
+        return this.$el.html('<h4 class="col-md-10">'+this.model.get('title')+'</h4>'+'<div class= "thumbnail col-md-2"><img src='+this.model.get('image')+'></div>');
     }
 })
