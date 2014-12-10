@@ -29,10 +29,16 @@ gem 'spring',        group: :development
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'themoviedb'
+gem 'eco'
+gem 'compass-rails'
+gem 'bootstrap-sass-rails'
+
+gem 'rabl'
+gem 'oj'
+gem 'js-routes'
+
 
 gem 'pry', :groups => [:development, :test]
-
-gem 'twitter-bootstrap-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
