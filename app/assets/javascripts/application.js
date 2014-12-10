@@ -17,14 +17,19 @@
 //= require lib/underscore
 //= require lib/backbone
 //= require lib/marionette
+//= require_tree ./backbone/config
 //= require backbone/video_tracker
-//= require backbone/application
+//= require backbone/app
+//= require_tree ./backbone/apps
+
+
 //= require backbone/namespace
+//= require backbone/application
 //= require_tree ./backbone/models
 //= require_tree ./backbone/collections
 //= require_tree ./backbone/views
 //= require_tree ./backbone/controllers
-//= require_tree ./backbone/routers
+
 
 
 
