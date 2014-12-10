@@ -8,10 +8,10 @@ Page.Controller.prototype = {
     },
     bindListeners: function(){
         var self = this;
-        $('.list').on('mouseenter', 'img', function(){
+        $('.movies-list').on('mouseenter', 'img', function(){
             self.showOverviewListener($(this));
         });
-        $('.list').on('mouseleave', 'img', function(){
+        $('.movies-list').on('mouseleave', 'img', function(){
             self.hideOverviewListener($(this));
         });
     },

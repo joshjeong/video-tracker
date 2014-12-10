@@ -3,14 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #app {
+  ul{
+    max-width: 700px;
+  }
   .title{
     text-align: center;
   }
   .movies-list,
   .shows-list{
     li{
-      position: relative;
-      padding: 2.5em;
       font-size: 25px;
       color: #0084B4;
       border-bottom: 1px solid #343434;
@@ -20,19 +21,11 @@
         color: #c0deed;
         text-decoration: line-through;
       }
+      .thumbnail{
+        margin: 3px 0;
+      }
       h4{
         cursor: pointer;
-      }
-      .thumbnail{
-        top: 0;
-        float: right;
-        position: absolute;
-        right: 30px;
-      }
-      img{
-        width: 100px;
-        height: 152px;
-        size: contain;
       }
     }
   }
