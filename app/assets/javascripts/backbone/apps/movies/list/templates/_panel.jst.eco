@@ -1,1 +1,1 @@
-Total Number of Movies: <%= @items.length %>
+<h1 class="panel-title">Top <%= @items.length %> Movies in Theatre</h1>

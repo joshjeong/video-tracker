@@ -1,0 +1,2 @@
+<td><img class = "poster-img" src= <%= @image %>></td>
+<td><%= @overview %></td>
