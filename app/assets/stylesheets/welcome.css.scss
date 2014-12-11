@@ -2,35 +2,116 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#app {
-  ul{
-    max-width: 700px;
-  }
-  .title{
+$overlay-color: rgba(36,36,36,.95);
+
+
+.poster-img{
+  height: 600px;
+  // width: 135px;
+  max-width: 410px;
+}
+
+table{
+  width: 410px !important;
+  margin: 0 auto !important;
+  th{
     text-align: center;
   }
-  .movies-list,
-  .shows-list{
-    li{
-      font-size: 25px;
-      color: #0084B4;
-      border-bottom: 1px solid #343434;
-      list-style: none;
-      text-align: center;
-      &.watched{
-        color: #c0deed;
-        text-decoration: line-through;
-      }
-      .thumbnail{
-        margin: 3px 0;
-      }
-      h4{
+  tbody{
+    tr{
+      height: 617px !important;
+      td{
+        text-align:center;
+        // height: 210px;
+        display:table-cell;
+        vertical-align:middle;
         cursor: pointer;
       }
     }
   }
 }
+.watched{
+  // background-color: lightgray;
+  opacity: 0.2;
+  text-decoration: line-through;
+  img{
+    opacity: 0.5;
+  }
+}
+
+.overview{
+  text-align: left;
+  padding: 0 50px;
+}
+
+.media-title{
+  padding: 70px 20px 0 20px;
+}
+
+.panel-title{
+  font-size: 40px;
+  text-align: center;
+  padding: 10px 0;
+}
 
 .no-display{
   display: none;
 }
+
+.no-opacity{
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+.main{
+  position: relative;
+}
+
+.overlay{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+// .overlay {
+//   height: 617px;
+//   width: 427px;
+//   background-color: $overlay-color;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+// }
+
+// .arrow-left{
+//   border-bottom-width: 617px;
+//   border-right-width: 617px;
+//   background-color: $overlay-color;
+// }
+
+// .wrapper {
+//   overflow: hidden;
+// }
+
+// .overlay, .rectangle{
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .wrapper .overlay {
+//   right: -100%;
+// }
+
+// .wrapper .overlay,
+// .wrapper .overlay .rectangle,
+// .wrapper .overlay .arrow-left {
+//   position: absolute;
+// }
+
+// .wrapper .overlay .rectangle {
+//   background-color: $overlay-color;
+// }
+
+// .wrapper .overlay .arrow-left {
+//   border-bottom: 0 solid transparent;
+//   border-right: 0 solid $overlay-color;
+// }
