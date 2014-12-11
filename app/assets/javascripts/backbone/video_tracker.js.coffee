@@ -1,9 +1,9 @@
-window.VideoTracker =
-  Models: {}
-  Collections: {}
-  Views: {}
-  Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+# window.VideoTracker =
+#   Models: {}
+#   Collections: {}
+#   Views: {}
+#   Routers: {}
+#   initialize: -> alert 'Hello from Backbone!'
 
-$(document).ready ->
+# $(document).ready ->
 
