@@ -25,7 +25,6 @@
 
 
 //= require backbone/namespace
-//= require backbone/application
 //= require_tree ./backbone/models
 //= require_tree ./backbone/collections
 //= require_tree ./backbone/views
