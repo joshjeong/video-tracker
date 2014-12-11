@@ -5,7 +5,11 @@ class CreateMovies < ActiveRecord::Migration
       t.string :image
       t.string :release_date
       t.string :link
-      t.boolean :watched
+      t.string :rating
+      t.text :overview
+      t.boolean :watched, default: false
+      t.boolean :queued, default: false
+      t.boolean :trashed, default: false
 
       t.timestamps
     end
