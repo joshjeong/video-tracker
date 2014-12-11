@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # get 'welcome/index'
   root 'welcome#index'
 
-  resources :movies, :defaults => {:format => "json"}
-  resources :shows, :defaults => {:format => "json"}
+  resources :movies
+  resources :shows
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -28,10 +28,12 @@
 
     getMovies: (movies) ->
       movieCollectionView = new List.MovieCollectionView
-        collection: movieCollectionView
+        collection: movies
 
     getPanel: (movies) ->
       new List.PanelView
         collection: movies
+
+
 
 

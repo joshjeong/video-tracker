@@ -11,5 +11,3 @@
   App.addInitializer ->
     new MoviesApp.Router
       controller: API
-    
-
