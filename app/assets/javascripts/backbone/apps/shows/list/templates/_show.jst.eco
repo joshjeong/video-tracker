@@ -1,0 +1,4 @@
+<td class='main'><img class = "poster-img" src= <%= @image %>></td>
+<td class='overlay no-display'>
+  <h2 class='media-title'><%= @title %></h2>
+</td>
