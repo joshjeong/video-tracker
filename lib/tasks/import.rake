@@ -5,17 +5,30 @@ namespace :import do
     in_theatres = Tmdb::Movie.now_playing
 
     in_theatres.each do |movie|
-      title = movie.title
+
+      details       = Tmdb::Movie.detail(movie.id)
+      title         = movie.title
+      release_date  = movie.release_date
+      link          = "http://www.themoviedb.org/movie/#{movie.id}"
+      rating        = movie.vote_average
+      overview      = Tmdb::Movie.detail(movie.id).overview
+
       if movie.poster_path
         image = "http://image.tmdb.org/t/p/w780/#{movie.poster_path}"
       else
         image = "http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_14.jpg"
       end
-      release_date = movie.release_date
-      link = "http://www.themoviedb.org/movie/#{movie.id}"
-      rating = movie.vote_average
-      overview = Tmdb::Movie.detail(movie.id).overview
-      Movie.create(title: title, image: image, release_date: release_date, link: link, watched: false, overview: overview, rating: rating)
+
+      parameters = {
+        title:          title, 
+        release_date:   release_date, 
+        link:           link, 
+        rating:         rating, 
+        overview:       overview,
+        image:          image 
+      }
+
+      Movie.create(parameters)
     end
   end
 
@@ -26,15 +39,23 @@ namespace :import do
     popular_shows = Tmdb::TV.popular
       
     popular_shows.each do |show|
-      title = show.name
+      title   = show.name
+      link    = "http://www.themoviedb.org/tv/#{show.id}"
       if show.poster_path
         image = "http://image.tmdb.org/t/p/w780/#{show.poster_path}"
       else
         image = "http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_14.jpg"
       end
       release_date = show.first_air_date
-      link = "http://www.themoviedb.org/tv/#{show.id}"
-      Show.create(title: title, image: image, release_date: release_date, link: link, watched: false)
+
+      parameters = {
+        title: title,
+        image: image,
+        release_date: release_date,
+        link: link
+      }
+
+      Show.create(parameters)
     end
   end
 end

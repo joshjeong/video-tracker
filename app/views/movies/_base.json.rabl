@@ -1,4 +1,4 @@
-attributes :id, :title, :image, :release_date, :link, :watched, :overview, :rating, :created_at, :updated_at
+attributes :id, :title, :image, :release_date, :link, :watched, :overview, :rating, :queued, :trashed, :created_at, :updated_at
 
 node do |movie|
   {

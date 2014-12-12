@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209024326) do
+ActiveRecord::Schema.define(version: 20141208221338) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
     t.string   "image"
     t.string   "release_date"
     t.string   "link"
-    t.boolean  "watched"
+    t.string   "rating"
+    t.text     "overview"
+    t.boolean  "watched",      default: false
+    t.boolean  "queued",       default: false
+    t.boolean  "trashed",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "overview"
-    t.string   "rating"
   end
 
   create_table "shows", force: true do |t|
@@ -30,7 +32,7 @@ ActiveRecord::Schema.define(version: 20141209024326) do
     t.string   "image"
     t.string   "release_date"
     t.string   "link"
-    t.boolean  "watched"
+    t.boolean  "watched",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,13 +5,13 @@
   class List.Links extends Backbone.Collection
     model: List.Link
 
-  # API = 
-  #   getLinks: ->
-  #     new List.Links [
-  #       { name: "Movies", Routes.movies_path()}
-  #       { name: "TV Shows", Routes.shows_path()}
-  #     ]
+  API = 
+    getLinks: ->
+      new List.Links [
+        { name: "Movies" }
+        { name: "Watched" }
+        { name: "Shows" }
+      ]
 
-
-  # App.reqres.setHandler "links:model", ->
-  #   API.getLinks()
+  App.reqres.setHandler "links:model", ->
+    API.getLinks()

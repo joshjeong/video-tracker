@@ -11,7 +11,7 @@
     getMovieCollection: (cb) ->
       movies = new List.Movies
       movies.fetch
-        success: -> 
+        success: ->
           cb movies
 
   App.reqres.setHandler "movie:model", (cb) ->
