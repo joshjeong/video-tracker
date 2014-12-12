@@ -16,7 +16,8 @@
     template: 'movies/list/templates/_movie'
     tagName: 'tr'
     events: 
-      'click' : 'toggleWatched'
+      'click .watched-btn' : 'toggleWatched'
+      'click .queued-btn' : 'toggleQueued'
       'mouseenter' : 'showOverlay'
       'mouseleave' : 'hideOverlay'
 
@@ -33,16 +34,20 @@
         this.model.set(watched: false).save()
       else
         this.model.set(watched: true).save()
+        
+    toggleQueued: ->
+      if this.model.get('queued') is true
+        this.model.set(queued: false).save()
+      else
+        this.model.set(queued: true).save()
+
 
     showOverlay: ->
-      # this.$el.find('.main').toggleClass('no-display')
-      this.$el.find('.overlay').toggleClass('no-display')
+      this.$el.find('.overlay').fadeIn(500)
 
 
     hideOverlay: ->
-      this.$el.find('.overlay').toggleClass('no-display')
-      # this.$el.find('.main').toggleClass('no-display')
-      # this.$el.find('.overlay').toggleClass('no-display')
+      this.$el.find('.overlay').fadeOut(500)
 
   class List.MovieCollectionView extends Marionette.CompositeView
     template: 'movies/list/templates/_movies'
