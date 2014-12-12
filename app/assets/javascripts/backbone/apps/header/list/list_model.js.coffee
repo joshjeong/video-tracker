@@ -10,6 +10,7 @@
       new List.Links [
         { name: "Movies" }
         { name: "Watched" }
+        { name: "Queued" }
         { name: "Shows" }
       ]
 
