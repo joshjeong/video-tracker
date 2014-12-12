@@ -13,6 +13,8 @@
     initialize: ->
       if this.model.get('watched') is true
         this.$el.addClass('watched')
+      if this.model.get('queued') is true
+        this.$el.addClass('queued')
     template: 'movies/list/templates/_movie'
     tagName: 'tr'
     events: 
@@ -29,17 +31,20 @@
 
 
     toggleWatched: -> 
-      this.$el.toggleClass('watched');
+      this.$el.toggleClass('watched')
       if this.model.get('watched') is true
         this.model.set(watched: false).save()
       else
         this.model.set(watched: true).save()
         
     toggleQueued: ->
+      this.$el.toggleClass('queued')
+      console.log this.model.get('queued')
       if this.model.get('queued') is true
         this.model.set(queued: false).save()
       else
         this.model.set(queued: true).save()
+      console.log this.model.get('queued')
 
 
     showOverlay: ->
