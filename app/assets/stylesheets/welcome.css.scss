@@ -46,6 +46,11 @@ table{
   }
 }
 
+.queued {
+  background-color: lightblue;
+}
+
+
 .overview{
   text-align: left;
   padding: 0 50px;
@@ -79,12 +84,15 @@ table{
   position: absolute;
   z-index: 2;
   top: 0;
+  background-color: rgba(0,0,0, .8);
+  height: 100%;
+  width: 100%;
 }
 
 // .overlay {
 //   height: 617px;
 //   width: 427px;
-//   background-color: $overlay-color;
+//   background-color: lightgray;
 //   position: absolute;
 //   left: 0;
 //   top: 0;
@@ -93,7 +101,7 @@ table{
 // .arrow-left{
 //   border-bottom-width: 617px;
 //   border-right-width: 617px;
-//   background-color: $overlay-color;
+//   background-color: lightgray;
 // }
 
 // .wrapper {
@@ -116,10 +124,10 @@ table{
 // }
 
 // .wrapper .overlay .rectangle {
-//   background-color: $overlay-color;
+//   background-color: lightgray;
 // }
 
 // .wrapper .overlay .arrow-left {
 //   border-bottom: 0 solid transparent;
-//   border-right: 0 solid $overlay-color;
+//   border-right: 0 solid lightgray;
 // }

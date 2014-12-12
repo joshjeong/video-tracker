@@ -7,11 +7,6 @@
   <div class='overlay no-display'>
     <h2 class='media-title'><%= @title %></h2>
     <p class="overview"><%= @overview %></p>
-    <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-default trashed-btn">Trash</button>
-      <button type="button" class="btn btn-default watched-btn">Watched</button>
-      <button type="button" class="btn btn-default queued-btn">Queue</button>
-    </div>
   </div>
 </td>
 

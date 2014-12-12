@@ -13,10 +13,13 @@
     initialize: ->
       if this.model.get('watched') is true
         this.$el.addClass('watched')
+      if this.model.get('queued') is true
+        this.$el.addClass('queued')
     template: 'movies/list/templates/_movie'
     tagName: 'tr'
     events: 
-      'click' : 'toggleWatched'
+      'click .watched-btn' : 'toggleWatched'
+      'click .queued-btn' : 'toggleQueued'
       'mouseenter' : 'showOverlay'
       'mouseleave' : 'hideOverlay'
 
@@ -28,21 +31,28 @@
 
 
     toggleWatched: -> 
-      this.$el.toggleClass('watched');
+      this.$el.toggleClass('watched')
       if this.model.get('watched') is true
         this.model.set(watched: false).save()
       else
         this.model.set(watched: true).save()
+        
+    toggleQueued: ->
+      this.$el.toggleClass('queued')
+      console.log this.model.get('queued')
+      if this.model.get('queued') is true
+        this.model.set(queued: false).save()
+      else
+        this.model.set(queued: true).save()
+      console.log this.model.get('queued')
+
 
     showOverlay: ->
-      # this.$el.find('.main').toggleClass('no-display')
-      this.$el.find('.overlay').toggleClass('no-display')
+      this.$el.find('.overlay').fadeIn(500)
 
 
     hideOverlay: ->
-      this.$el.find('.overlay').toggleClass('no-display')
-      # this.$el.find('.main').toggleClass('no-display')
-      # this.$el.find('.overlay').toggleClass('no-display')
+      this.$el.find('.overlay').fadeOut(500)
 
   class List.MovieCollectionView extends Marionette.CompositeView
     template: 'movies/list/templates/_movies'

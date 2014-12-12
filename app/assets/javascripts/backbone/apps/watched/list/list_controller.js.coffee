@@ -3,7 +3,6 @@
   List.Controller = 
     listWatched: ->
       App.request "movie:model", (movies) =>
-        movieList = movies.models
 
         watchedArray = movies.where(watched: true)
 
