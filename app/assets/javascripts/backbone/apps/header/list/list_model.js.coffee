@@ -10,8 +10,8 @@
       new List.Links [
         { name: "Movies" }
         { name: "Watched" }
-        { name: "Queue" }
-        { name: "Trash" }
+        { name: "Queued" }
+        { name: "Trashed" }
         { name: "Shows" }
       ]
 
