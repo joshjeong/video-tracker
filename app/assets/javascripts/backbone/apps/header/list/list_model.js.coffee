@@ -11,6 +11,7 @@
         { name: "Movies" }
         { name: "Watched" }
         { name: "Queued" }
+        { name: "Trashed" }
         { name: "Shows" }
       ]
 
