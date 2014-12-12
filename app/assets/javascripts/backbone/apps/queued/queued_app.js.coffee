@@ -10,6 +10,6 @@
       QueuedApp.List.Controller.getQueuedList()
 
 
-  # App.addInitializer ->
-  #   new QueuedApp.Router
-  #     controller: API
+  App.addInitializer ->
+    new QueuedApp.Router
+      controller: API
