@@ -11,11 +11,14 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    if [true, false].include?(params[:watched])
-      @movie.update_attributes(watched: params[:watched])
-      respond_with @movie
-    else
-      render nothing: true, status: 304 
-    end
+    @movie.update_attributes(movie_params)
+    respond_with @movie
   end
+
+  private
+  def movie_params
+    params.require(:movie).permit(:watched, :trashed, :queued)
+  end
+
+
 end
