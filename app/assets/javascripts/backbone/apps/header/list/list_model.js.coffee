@@ -8,8 +8,9 @@
   API = 
     getLinks: ->
       new List.Links [
-        { name: "Movies", url: Routes.movies_path()}
-        { name: "TV Shows", url: Routes.shows_path()}
+        { name: "Movies" }
+        { name: "Watched" }
+        { name: "Shows" }
       ]
 
   App.reqres.setHandler "links:model", ->
