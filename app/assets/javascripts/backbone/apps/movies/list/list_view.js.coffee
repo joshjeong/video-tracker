@@ -11,41 +11,42 @@
 
   class List.MovieView  extends Marionette.ItemView
     initialize: ->
-      if this.model.get('watched') is true
-        this.$el.addClass('watched')
-      if this.model.get('queued') is true
-        this.$el.addClass('queued')
+      attributes = ['watched', 'queued', 'trashed']
+      for attr in attributes
+        if this.model.get(attr) is true
+          this.$el.addClass('no-display')
     template: 'movies/list/templates/_movie'
     tagName: 'tr'
     events: 
       'click .watched-btn' : 'toggleWatched'
-      'click .queued-btn' : 'toggleQueued'
-      'mouseenter' : 'showOverlay'
-      'mouseleave' : 'hideOverlay'
-
-    # getTemplate: ->
-    #   if this.model.get('watched') is true
-    #     return "movies/list/templates/_movie"
-    #   else
-    #     return "movies/list/templates/_watched"
-
+      'click .queued-btn'  : 'toggleQueued'
+      'click .trashed-btn'  : 'toggleTrashed'
+      'click .btn-group'   : 'hideMovie'
+      'mouseenter'         : 'showOverlay'
+      'mouseleave'         : 'hideOverlay'
 
     toggleWatched: -> 
-      this.$el.toggleClass('watched')
       if this.model.get('watched') is true
         this.model.set(watched: false).save()
       else
         this.model.set(watched: true).save()
         
     toggleQueued: ->
-      this.$el.toggleClass('queued')
-      console.log this.model.get('queued')
       if this.model.get('queued') is true
         this.model.set(queued: false).save()
       else
         this.model.set(queued: true).save()
       console.log this.model.get('queued')
 
+    toggleTrashed: ->
+      if this.model.get('trashed') is true
+        this.model.set(trashed: false).save()
+      else
+        this.model.set(trashed: true).save()
+      console.log this.model.get('trashed')
+
+    hideMovie: ->
+      this.$el.fadeOut(500)
 
     showOverlay: ->
       this.$el.find('.overlay').fadeIn(500)
