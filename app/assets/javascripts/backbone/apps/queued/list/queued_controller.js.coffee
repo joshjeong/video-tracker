@@ -1,5 +1,9 @@
 @VideoTracker.module "QueuedApp.List", (List, App, Backbone, Marionette, $, _) ->
-  List.Controller =
+
+  class List.Controller extends Marionette.Controller
+    initialize: ->
+      @getQueuedList()
+
     getQueuedList: ->
       # get from db
       App.request "movie:model", (movies) =>
