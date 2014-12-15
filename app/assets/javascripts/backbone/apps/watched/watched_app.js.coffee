@@ -6,7 +6,7 @@
 
   API = 
     listWatched: ->
-      WatchedApp.List.Controller.listWatched()
+      new WatchedApp.List.Controller
 
   App.addInitializer ->
     new WatchedApp.Router
