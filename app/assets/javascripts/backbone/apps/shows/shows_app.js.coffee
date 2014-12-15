@@ -6,7 +6,7 @@
 
   API = 
     listShows: ->
-      ShowsApp.List.Controller.listShows()
+      new ShowsApp.List.Controller
 
   App.addInitializer ->
     new ShowsApp.Router
