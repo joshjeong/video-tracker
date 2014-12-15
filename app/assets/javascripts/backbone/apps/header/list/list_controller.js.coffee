@@ -1,7 +1,9 @@
 @VideoTracker.module "HeaderApp.List", (List, App, Backbone, Marionette, $, _) ->
 
+  class List.Controller extends Marionette.Controller
+    initialize: ->
+      @listHeader()
 
-  List.Controller = 
     listHeader: ->
       links = App.request "links:model"
 
