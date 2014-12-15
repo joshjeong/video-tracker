@@ -1,6 +1,9 @@
 @VideoTracker.module "WatchedApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  List.Controller = 
+  class List.Controller extends Marionette.Controller
+    initialize: ->
+      @listWatched()
+
     listWatched: ->
       App.request "movie:model", (movies) =>
 

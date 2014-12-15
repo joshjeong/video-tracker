@@ -1,7 +1,7 @@
 @VideoTracker.module "ShowsApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  List.Controller =
-    listShows: ->
+  class List.Controller extends Marionette.Controller
+    initialize: ->
       App.request "show:model", (shows) =>
 
         @layout = @getLayout()

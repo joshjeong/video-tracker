@@ -1,6 +1,8 @@
 @VideoTracker.module "MoviesApp.List", (List, App, Backbone, Marionette, $, _) ->
   
-  List.Controller =
+  class List.Controller extends Marionette.Controller
+    initialize: ->
+      @listMovies()
     # Passes the code responsible for instantiating the view as a callback for a request for movie model
     listMovies: ->
       App.request "movie:model", (movies) =>

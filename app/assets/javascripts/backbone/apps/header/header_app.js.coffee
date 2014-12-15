@@ -3,7 +3,7 @@
 
   API = 
     listHeader: ->
-      HeaderApp.List.Controller.listHeader()
+      new HeaderApp.List.Controller
 
 
 

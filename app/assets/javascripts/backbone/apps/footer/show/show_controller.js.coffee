@@ -1,6 +1,9 @@
 @VideoTracker.module "FooterApp.Show", (Show, App, Backbone, Marionette, $, _) ->
 
-  Show.Controller =
+  class Show.Controller extends Marionette.Controller
+    initialize: ->
+      @showFooter()
+      
     showFooter: ->
       footerView = @getFooterView()
 

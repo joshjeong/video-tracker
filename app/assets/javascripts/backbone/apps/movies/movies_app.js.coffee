@@ -5,8 +5,7 @@
       "movies" : "listMovies"
 
   API =
-    listMovies:->
-      MoviesApp.List.Controller.listMovies()
+    new MoviesApp.List.Controller      
 
   App.addInitializer ->
     new MoviesApp.Router

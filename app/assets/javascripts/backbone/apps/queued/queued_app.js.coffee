@@ -4,10 +4,9 @@
     appRoutes:
       "queued" : "queuedList"
 
-
   API = 
     queuedList: ->
-      QueuedApp.List.Controller.getQueuedList()
+      new QueuedApp.List.Controller
 
 
   App.addInitializer ->
