@@ -9,7 +9,6 @@
         queuedMovies = new List.QueuedMovies
       # reset to convert array to collection object
         queuedMovies.reset(queuedArray)
-        console.log queuedMovies
 
       #pass to view
         queuedListView = @getQueuedListView queuedMovies
@@ -21,3 +20,4 @@
     getQueuedListView: (queuedMovies)->
       new List.QueuedListView
         collection: queuedMovies
+
