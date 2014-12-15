@@ -1,8 +1,12 @@
 @VideoTracker.module "TrashedApp.List", (List, App, Backbone, Marionette, $, _) ->
 
   class List.TrashedView extends Marionette.ItemView
+    initialize: ->
+      Marionette.bindEntityEvents(this, this.model, this.modelEvents)
     template: 'trashed/list/templates/_trashedmovie'
     tagName: 'tr'
+    modelEvents: 
+      "change" : "remove"
     events: 
       'click .remove-btn'  : 'untrash'
       'mouseenter'         : 'showOverlay'

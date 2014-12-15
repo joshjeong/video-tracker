@@ -1,8 +1,12 @@
 @VideoTracker.module "WatchedApp.List", (List, App, Backbone, Marionette, $, _) ->
 
   class List.WatchedMovieView extends Marionette.ItemView
+    initialize: ->
+      Marionette.bindEntityEvents(this, this.model, this.modelEvents)
     template: 'watched/list/templates/_watchedmovie'
     tagName: 'tr'
+    modelEvents: 
+      "change" : "remove"
     events: 
       'click .remove-btn'  : 'unwatch'
       'mouseenter'         : 'showOverlay'

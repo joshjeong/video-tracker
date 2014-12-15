@@ -11,17 +11,20 @@
 
   class List.MovieView  extends Marionette.ItemView
     initialize: ->
+      Marionette.bindEntityEvents(this, this.model, this.modelEvents)
       attributes = ['watched', 'queued', 'trashed']
       for attr in attributes
         if this.model.get(attr) is true
           this.$el.addClass('no-display')
     template: 'movies/list/templates/_movie'
     tagName: 'tr'
+    modelEvents: 
+      "change" : "remove"
     events: 
       'click .watched-btn' : 'toggleWatched'
       'click .queued-btn'  : 'toggleQueued'
-      'click .trashed-btn'  : 'toggleTrashed'
-      'click .btn-group'   : 'hideMovie'
+      'click .trashed-btn' : 'toggleTrashed'
+      # 'click .btn-group'   : 'hideMovie'
       'mouseenter'         : 'showOverlay'
       'mouseleave'         : 'hideOverlay'
 
