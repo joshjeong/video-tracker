@@ -1,6 +1,9 @@
 @VideoTracker.module "TrashedApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  List.Controller =
+  class List.Controller extends Marionette.Controller
+    initialize: ->
+      @trashedList()
+      
     trashedList: ->
       App.request "movie:model", (movies) =>
 

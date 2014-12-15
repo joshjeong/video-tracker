@@ -6,7 +6,7 @@
 
   API =
     trashedList: ->
-      TrashedApp.List.Controller.trashedList()
+      new TrashedApp.List.Controller
 
 
   App.addInitializer ->
