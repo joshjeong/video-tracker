@@ -1,12 +1,8 @@
 <td class='main'>
   <img class = "poster-img wrapper" src= <%= @image %>>
-<!--     <div class='overlay'>
-      <div class='arrow-left'></div>
-      <div class='rectangle'></div>
-    </div> -->
   <div class='overlay no-display'>
     <h2 class='media-title'><%= @title %></h2>
     <p class="overview"><%= @overview %></p>
+    <button type="button" class="btn btn-default remove-btn">Yaaaaa.... No</button>
   </div>
 </td>
-
