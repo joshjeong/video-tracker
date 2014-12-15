@@ -28,12 +28,10 @@
         this.model.set(watched: true).save()
 
     showOverlay: ->
-      this.$el.find('.main').toggleClass('no-display')
-      this.$el.find('.overlay').toggleClass('no-display')
+      this.$el.find('.overlay').fadeIn(500)
 
     hideOverlay: ->
-      this.$el.find('.main').toggleClass('no-display')
-      this.$el.find('.overlay').toggleClass('no-display')
+      this.$el.find('.overlay').fadeOut(500)
 
   class List.ShowCollectionView extends Marionette.CompositeView
     template: "shows/list/templates/_shows"

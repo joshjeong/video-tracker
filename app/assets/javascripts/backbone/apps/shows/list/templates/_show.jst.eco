@@ -1,4 +1,8 @@
-<td class='main'><img class = "poster-img" src= <%= @image %>></td>
-<td class='overlay no-display'>
-  <h2 class='media-title'><%= @title %></h2>
+<td class='main'>
+  <img class = "poster-img wrapper" src= <%= @image %>>
+  <div class='overlay no-display'>
+    <h2 class='media-title'><%= @title %></h2>
+    <p class="overview"><%= @overview %></p>
+    <button type="button" class="btn btn-default watched-btn">I Watch This Already</button>
+  </div>
 </td>
