@@ -1,28 +1,13 @@
 @VideoTracker.module "TrashedApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  class List.TrashedView extends Marionette.ItemView
-    initialize: ->
-      Marionette.bindEntityEvents(this, this.model, this.modelEvents)
+  class List.TrashedView extends App.Views.ItemView
     template: 'trashed/list/templates/_trashedmovie'
-    tagName: 'tr'
-    modelEvents: 
-      "change" : "remove"
-    events: 
-      'click .remove-btn'  : 'untrash'
-      'mouseenter'         : 'showOverlay'
-      'mouseleave'         : 'hideOverlay'
+    events: ->
+      _.extend {}, App.Views.ItemView::events,
+        mouseenter            : 'showOverlay'
+        mouseleave            : 'hideOverlay'
+        'click .trashed-btn'  : 'toggleTrashed'
 
-    untrash: ->
-      this.model.set(trashed: false).save()
-
-    showOverlay: ->
-      this.$el.find('.overlay').fadeIn(500)
-
-    hideOverlay: ->
-      this.$el.find('.overlay').fadeOut(500)
-
-
-  class List.TrashedListCollection extends Marionette.CompositeView
+  class List.TrashedListCollection extends App.Views.CompositeView
     template: 'trashed/list/templates/_trashedmovies'
     childView: List.TrashedView
-    childViewContainer: 'tbody'
