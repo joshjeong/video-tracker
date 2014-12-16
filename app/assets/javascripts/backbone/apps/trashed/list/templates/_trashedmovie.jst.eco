@@ -3,6 +3,6 @@
   <div class='overlay no-display'>
     <h2 class='media-title'><%= @title %></h2>
     <p class="overview"><%= @overview %></p>
-    <button type="button" class="btn btn-default remove-btn">I guess this movie isn't that bad...</button>
+    <button type="button" class="btn btn-default trashed-btn">I guess this movie isn't that bad...</button>
   </div>
 </td>
