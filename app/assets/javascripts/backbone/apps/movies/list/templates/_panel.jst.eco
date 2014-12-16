@@ -1,1 +1,1 @@
-<h1 class="panel-title">Top <%= @items.length %> Movies in Theatre</h1>
+<h1 class="panel-title">Movies in Database: <%= @items.length %></h1>
