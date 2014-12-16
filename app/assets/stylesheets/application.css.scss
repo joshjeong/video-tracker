@@ -14,8 +14,9 @@
  *= require_self
  */
 
- @import "normalize";
+@import "normalize";
 @import "twitter/bootstrap";
 @import "apps/base";
 @import "apps/footer";
 @import "apps/header";
+@import "./welcome";

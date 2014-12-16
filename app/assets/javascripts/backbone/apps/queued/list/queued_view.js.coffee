@@ -1,28 +1,13 @@
 @VideoTracker.module "QueuedApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  class List.QueuedMovieView extends Marionette.ItemView
-    initialize: ->
-      Marionette.bindEntityEvents(this, this.model, this.modelEvents)
+  class List.QueuedMovieView extends App.Views.ItemView
     template: 'queued/list/templates/queuedmovie'
-    tagName: 'tr'
-    modelEvents: 
-      "change" : "remove"
-    events: 
-      'click .remove-btn'  : 'unqueue'
-      'mouseenter'         : 'showOverlay'
-      'mouseleave'         : 'hideOverlay'
+    events: ->
+      _.extend {}, App.Views.ItemView::events,
+        mouseenter          : 'showOverlay'
+        mouseleave          : 'hideOverlay'
+        'click .queued-btn' : 'toggleQueued'
 
-    unqueue: ->
-      this.model.set(queued: false).save()
-
-    showOverlay: ->
-      this.$el.find('.overlay').fadeIn(500)
-
-    hideOverlay: ->
-      this.$el.find('.overlay').fadeOut(500)
-
-
-  class List.QueuedListView extends Marionette.CompositeView
+  class List.QueuedListView extends App.Views.CompositeView
     template: 'queued/list/templates/queuedmovies'
     childView: List.QueuedMovieView
-    childViewContainer: 'tbody'
