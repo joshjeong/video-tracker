@@ -23,25 +23,21 @@ $overlay-color: rgba(36,36,36,.95);
 
 table{
   width: 410px !important;
-  margin: 0 auto !important;
-  th{
-    text-align: center;
-  }
+  margin: 0 auto;
   tbody{
     tr{
       height: 617px !important;
       td{
         text-align:center;
-        // height: 210px;
         display:table-cell;
         vertical-align:middle;
-        cursor: pointer;
       }
     }
   }
 }
+
+
 .watched{
-  // background-color: lightgray;
   opacity: 0.2;
   text-decoration: line-through;
   img{
@@ -53,7 +49,6 @@ table{
   background-color: lightblue;
 }
 
-
 .overview{
   text-align: left;
   padding: 20px 50px;
@@ -64,9 +59,9 @@ table{
 }
 
 .section-title{
+  padding: 30px 0;
   font-size: 25px;
   text-align: center;
-  padding: 30px 0;
 }
 
 .panel-title{
@@ -83,11 +78,6 @@ table{
   display: none;
 }
 
-.no-opacity{
-  opacity: 0;
-  transition: all 1s linear;
-}
-
 .main{
   position: relative;
 }
@@ -101,46 +91,3 @@ table{
   height: 100%;
   width: 100%;
 }
-
-// .overlay {
-//   height: 617px;
-//   width: 427px;
-//   background-color: lightgray;
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-// }
-
-// .arrow-left{
-//   border-bottom-width: 617px;
-//   border-right-width: 617px;
-//   background-color: lightgray;
-// }
-
-// .wrapper {
-//   overflow: hidden;
-// }
-
-// .overlay, .rectangle{
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .wrapper .overlay {
-//   right: -100%;
-// }
-
-// .wrapper .overlay,
-// .wrapper .overlay .rectangle,
-// .wrapper .overlay .arrow-left {
-//   position: absolute;
-// }
-
-// .wrapper .overlay .rectangle {
-//   background-color: lightgray;
-// }
-
-// .wrapper .overlay .arrow-left {
-//   border-bottom: 0 solid transparent;
-//   border-right: 0 solid lightgray;
-// }
